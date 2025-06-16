@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Cladding - Natural Stone Specialists</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF9F6; /* Light Cream */
+            color: #333333; /* Deep Slate */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #333333; /* Deep Slate */
+        }
+        .bg-forest-green { background-color: #4A5D23; }
+        .text-forest-green { color: #4A5D23; }
+        .border-forest-green { border-color: #4A5D23; }
+        .hover\:bg-forest-green-dark:hover { background-color: #3b4a1c; }
+        .bg-sky-blue { background-color: #8CBED6; }
+        .text-sky-blue { color: #8CBED6; }
+        .bg-granite-grey { background-color: #8B8C89; }
+        .text-granite-grey { color: #8B8C89; }
+        .bg-light-cream { background-color: #FAF9F6; }
+        .text-deep-slate { color: #333333; }
+        .bg-deep-slate { background-color: #333333; }
+
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #4A5D23; /* Forest Green */
+            border-bottom-color: #4A5D23; /* Forest Green */
+        }
+        .hero-section {
+            /* Replace with your hero background image */
+            background-image: url('images/Hero 7.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #4A5D23;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #4A5D23;
+        }
+        /* Page transition */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-light-cream">
+
+    <!-- Header -->
+    <header class="bg-light-cream shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-deep-slate">
+                <a href="#" class="flex items-center space-x-2">
+                    <!-- Logo placeholder restored -->
+                    <img src="images/Logo-2.png" alt="Logo" class="h-11 w-11 text-forest-green" />
+                    <span>Stone Cladding</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link active" onclick="showPage('home', this)">Home</a>
+                <a href="#about" class="nav-link" onclick="showPage('about', this)">About Us</a>
+                <a href="#services" class="nav-link" onclick="showPage('services', this)">Services</a>
+                <a href="#contact" class="nav-link" onclick="showPage('contact', this)">Contact Us</a>
+            </nav>
+            <a href="#contact" onclick="showPage('contact', document.querySelector('a[href=\'#contact\']'))" class="hidden md:inline-block bg-forest-green text-white font-semibold px-6 py-2 rounded-lg shadow-sm hover:bg-forest-green-dark transition-colors">
+                Get a Free Quote
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="block nav-link active" onclick="showPage('home', this)">Home</a>
+            <a href="#about" class="block nav-link" onclick="showPage('about', this)">About Us</a>
+            <a href="#services" class="block nav-link" onclick="showPage('services', this)">Services</a>
+            <a href="#contact" class="block nav-link" onclick="showPage('contact', this)">Contact Us</a>
+            <a href="#contact" onclick="showPage('contact', document.querySelector('a[href=\'#contact\']'))" class="block text-center mt-4 bg-forest-green text-white font-semibold px-6 py-2 rounded-lg shadow-sm hover:bg-forest-green-dark transition-colors">
+                Get a Free Quote
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <!-- Hero Section is styled in the <style> block in the <head> -->
+            <section class="hero-section relative text-white h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
+                <div class="relative z-10 p-6">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-white"> Natural Stone Elegance</h1>
+                    <p class="text-xl md:text-2xl font-light mb-8">Beautiful. Strong. Timeless.</p>
+                    <div class="space-x-4">
+                        <a href="#contact" onclick="showPage('contact', document.querySelector('a[href=\'#contact\']'))" class="bg-forest-green text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-forest-green-dark transition-transform transform hover:scale-105">Get a Quote</a>
+                        <a href="#services" onclick="showPage('services', document.querySelector('a[href=\'#services\']'))" class="bg-light-cream text-deep-slate font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">View Our Work</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="py-20 bg-light-cream">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl font-bold mb-4">Why Choose Us?</h2>
+                    <p class="text-granite-grey mb-12 max-w-2xl mx-auto">We combine passion with expertise to deliver stonework that stands the test of time.</p>
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <div class="p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-sky-blue inline-block p-4 rounded-full mb-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Durable & Waterproof</h3>
+                            <p class="text-granite-grey">Our natural stone solutions are built to withstand the elements, ensuring longevity and performance.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform">
+                             <div class="bg-sky-blue inline-block p-4 rounded-full mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Natural Aesthetic</h3>
+                            <p class="text-granite-grey">Enhance your property with the timeless, organic beauty of authentic stone craftsmanship.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-sky-blue inline-block p-4 rounded-full mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                  <path d="M8.433 7.418c.158-.103.358-.168.567-.168h1.998c.553 0 1.002.448 1.002 1.001v.001c0 .553-.449 1.002-1.002 1.002h-1.998a.996.996 0 01-.567-.168L6.433 8.418a1 1 0 010-1.414l2-1.582zm-2.24-1.803a.5.5 0 00-.707 0l-2 2a.5.5 0 00.707.707L4.5 6.914V13.5a.5.5 0 00.5.5h10a.5.5 0 00.5-.5V6.914l.293.293a.5.5 0 00.707-.707l-2-2a.5.5 0 00-.707 0L8.193 5.615z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Affordable Excellence</h3>
+                            <p class="text-granite-grey">We provide premium quality stonework at competitive prices, delivering exceptional value.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Special Promotions -->
+            <section class="py-20 bg-white">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl font-bold mb-4 text-forest-green">Special Promotions</h2>
+                    <p class="text-lg text-deep-slate max-w-3xl mx-auto mb-8">
+                        Featuring exclusive specials this year—quality stonework at affordable prices. Dry stacking for long-lasting, cement-free solutions!
+                    </p>
+                     <a href="#services" onclick="showPage('services', document.querySelector('a[href=\'#services\']'))" class="bg-forest-green text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-forest-green-dark transition-transform transform hover:scale-105">View Our Work</a>
+                </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section class="py-20 bg-light-cream">
+                 <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center mb-12">Our Recent Work</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Replace with your image file -->
+                        <img src="images/1.png" alt="A beautiful stone garden wall" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/2.png" alt="A modern house with natural stone cladding" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/3.png" alt="A strong dry-stack retaining wall" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/4.png" alt="An elegant stone gate entrance" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/5.png" alt="Close-up of dry stacking stonework" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/6.png" alt="A renovated fireplace with new stone" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/7.png" alt="Restored historical stonework" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <!-- Replace with your image file -->
+                        <img src="images/8.png" alt="An interior stone feature wall" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </section>
+
+             <!-- Testimonials -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+                    <div class="swiper-container testimonial-slider max-w-3xl mx-auto">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center p-8">
+                                <p class="text-lg italic text-granite-grey mb-4">"The team at Stone Cladding transformed our entrance. The craftsmanship is outstanding, and the process was seamless from start to finish. Highly recommended!"</p>
+                                <h4 class="font-bold text-deep-slate">- The Johnson Family</h4>
+                            </div>
+                            <div class="swiper-slide text-center p-8">
+                                <p class="text-lg italic text-granite-grey mb-4">"Incredible attention to detail and a truly professional service. Our new garden wall is not only beautiful but also incredibly sturdy. Thank you!"</p>
+                                <h4 class="font-bold text-deep-slate">- Sarah L.</h4>
+                            </div>
+                            <div class="swiper-slide text-center p-8">
+                                <p class="text-lg italic text-granite-grey mb-4">"Affordable, reliable, and the final result exceeded our expectations. The dry stacking technique is fantastic. We couldn't be happier."</p>
+                                <h4 class="font-bold text-deep-slate">- Mark D.</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- CTA Banner -->
+             <section class="bg-forest-green text-white py-16">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-bold mb-4">Ready to transform your space?</h2>
+                    <p class="text-lg mb-8">Contact us today to discuss your project.</p>
+                     <a href="https://wa.me/27697650022" target="_blank" class="bg-white text-forest-green font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105 inline-flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.919 6.18l-1.059 3.874 3.996-1.042z"/></svg>
+                        <span>Message Us on WhatsApp</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+             <section class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h1 class="text-5xl font-bold mb-4">About Stone Cladding</h1>
+                        <p class="text-xl text-granite-grey">Building with Nature's Finest Materials</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <!-- Replace with your image file -->
+                             <img src="images/11.jpeg" alt="The Stone Cladding team at a worksite" class="rounded-lg shadow-2xl">
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold mb-4">Proudly South African</h2>
+                            <p class="text-lg text-deep-slate mb-6">
+                                Stone Cladding is a proudly South African company based in Mooi River. We specialize in natural stone construction, with a passion for blending timeless design with structural integrity. With over 10 years of hands-on experience in the stonework industry, we've become trusted providers for residential, commercial, and hospitality projects alike.
+                            </p>
+                             <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+                            <p class="text-lg text-deep-slate">
+                                Our mission is to enhance the built environment using nature's finest materials. We strive to deliver excellent workmanship, promote sustainable construction practices, and help our clients fall in love with their spaces again.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-20 bg-light-cream">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl font-bold mb-12">Our Simple Process</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="flex flex-col items-center">
+                             <div class="bg-sky-blue text-white rounded-full h-24 w-24 flex items-center justify-center mb-4"><span class="text-3xl font-bold">1</span></div>
+                            <h3 class="text-xl font-bold mb-2">Site Visit</h3>
+                            <p class="text-granite-grey">We assess your space and discuss your vision.</p>
+                        </div>
+                         <div class="flex flex-col items-center">
+                             <div class="bg-sky-blue text-white rounded-full h-24 w-24 flex items-center justify-center mb-4"><span class="text-3xl font-bold">2</span></div>
+                            <h3 class="text-xl font-bold mb-2">Planning & Quote</h3>
+                            <p class="text-granite-grey">We provide a detailed plan and a transparent quote.</p>
+                        </div>
+                         <div class="flex flex-col items-center">
+                            <div class="bg-sky-blue text-white rounded-full h-24 w-24 flex items-center justify-center mb-4"><span class="text-3xl font-bold">3</span></div>
+                            <h3 class="text-xl font-bold mb-2">Build</h3>
+                            <p class="text-granite-grey">Our expert craftsmen bring the design to life.</p>
+                        </div>
+                         <div class="flex flex-col items-center">
+                           <div class="bg-sky-blue text-white rounded-full h-24 w-24 flex items-center justify-center mb-4"><span class="text-3xl font-bold">4</span></div>
+                            <h3 class="text-xl font-bold mb-2">Final Inspection</h3>
+                            <p class="text-granite-grey">We ensure every detail meets our high standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="py-20 bg-white">
+                 <div class="container mx-auto px-6">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div>
+                             <h2 class="text-3xl font-bold mb-6">Our Core Values</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-start"><span class="text-forest-green font-bold mr-3">✓</span> Quality: Uncompromising standards in materials and execution.</li>
+                                <li class="flex items-start"><span class="text-forest-green font-bold mr-3">✓</span> Affordability: Fair pricing without sacrificing excellence.</li>
+                                <li class="flex items-start"><span class="text-forest-green font-bold mr-3">✓</span> Craftsmanship: Passion and precision in every stone we lay.</li>
+                                <li class="flex items-start"><span class="text-forest-green font-bold mr-3">✓</span> Transparency: Open communication and honest advice.</li>
+                                <li class="flex items-start"><span class="text-forest-green font-bold mr-3">✓</span> Customer Satisfaction: Your happiness is our ultimate goal.</li>
+                            </ul>
+                             <h3 class="text-2xl font-bold mt-10 mb-3">A Note on Sustainability</h3>
+                            <p class="text-lg text-deep-slate">Our dry-stacking methods reduce cement use and carbon impact. We believe in preserving nature while building with it.</p>
+                        </div>
+                        <div>
+                             <!-- Replace with your image file -->
+                            <img src="images/9.png" alt="A detailed shot of stone craftsmanship" class="rounded-lg shadow-2xl">
+                        </div>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+             <section class="py-20 bg-light-cream">
+                 <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h1 class="text-5xl font-bold mb-4">Our Services</h1>
+                        <p class="text-xl text-granite-grey max-w-2xl mx-auto">Expert stone solutions tailored to your needs, from supply and installation to restoration and renovation.</p>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Service 1: Fix & Supply -->
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-4">Fix & Supply</h2>
+                                <p class="text-lg mb-4">From sourcing quality stone to expertly installing it, we provide a comprehensive fix and supply solution.</p>
+                                <ul class="list-disc list-inside space-y-2 text-lg">
+                                    <li>Delivery to your site</li>
+                                    <li>Wide selection of stone textures and colors</li>
+                                    <li>Affordable bulk pricing</li>
+                                </ul>
+                            </div>
+                             <!-- Replace with your image file -->
+                            <img src="images/Service 4.jpeg" class="rounded-lg shadow-xl" alt="Pallets of natural stone ready for supply">
+                        </div>
+                        <!-- Service 2: Garden Walls -->
+                         <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <!-- Replace with your image file -->
+                             <img src="images/Service 2.jpg" class="rounded-lg shadow-xl order-last md:order-first" alt="A beautifully crafted stone garden wall in a lush garden">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-4">Garden Walls</h2>
+                                <p class="text-lg mb-4">Our stone garden walls bring elegance and structure to any landscape.</p>
+                                <ul class="list-disc list-inside space-y-2 text-lg">
+                                    <li>Custom heights and finishes</li>
+                                    <li>Natural borders and retaining options</li>
+                                    <li>Waterproof and erosion-resistant designs</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Service 3: Retaining Walls -->
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-4">Retaining Walls</h2>
+                                <p class="text-lg mb-4">Built to last, our retaining walls are created using dry stack techniques, ensuring strength without cement.</p>
+                                <ul class="list-disc list-inside space-y-2 text-lg">
+                                    <li>Engineering support if required</li>
+                                    <li>Long lifespan and low maintenance</li>
+                                    <li>Eco-friendly construction</li>
+                                </ul>
+                            </div>
+                            <!-- Replace with your image file -->
+                            <img src="images/Service-3.jpg" class="rounded-lg shadow-xl" alt="A large, robust retaining wall made of stacked stone">
+                        </div>
+                        <!-- Service 4: House Cladding -->
+                         <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <!-- Replace with your image file -->
+                            <img src="images/Service-5.jpg" class="rounded-lg shadow-xl order-last md:order-first" alt="Exterior of a house with elegant stone cladding">
+                            <div>
+                                <h2 class="text-3xl font-bold mb-4">House Cladding</h2>
+                                <p class="text-lg mb-4">Transform your home's exterior with stone cladding that protects against the elements and adds timeless beauty.</p>
+                                <ul class="list-disc list-inside space-y-2 text-lg">
+                                    <li>Thermal insulation</li>
+                                    <li>Noise reduction</li>
+                                    <li>Superior weatherproofing</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <!-- Other Services -->
+                        <div class="grid md:grid-cols-3 gap-8 text-center">
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                 <h3 class="text-2xl font-bold mb-3">Drywalls</h3>
+                                <p>Eco-friendly and efficient, our drywalls are crafted with precision and do not rely on adhesives or mortar.</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                 <h3 class="text-2xl font-bold mb-3">Cleaning & Restoration</h3>
+                                <p>We clean and restore old stonework, returning it to its natural beauty. Includes chemical-free options and mold removal.</p>
+                            </div>
+                            <div class="bg-white p-8 rounded-lg shadow-lg">
+                                 <h3 class="text-2xl font-bold mb-3">Renovations & Entrances</h3>
+                                <p>Stone cladding adds character and strength to gate pillars, boundary walls, and entranceways.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="mt-20 text-center bg-forest-green text-white p-12 rounded-lg">
+                        <h2 class="text-3xl font-bold mb-3">Need help choosing a finish?</h2>
+                        <p class="text-lg mb-6">Let us guide you through the options to find the perfect stone for your project.</p>
+                        <a href="#contact" onclick="showPage('contact', document.querySelector('a[href=\'#contact\']'))" class="bg-white text-forest-green font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-transform transform hover:scale-105">Get a Custom Quote</a>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="py-20 bg-light-cream">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h1 class="text-5xl font-bold mb-4">Get In Touch</h1>
+                        <p class="text-xl text-granite-grey">We're here to answer your questions and start planning your project.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-16">
+                        <!-- Contact Form -->
+                        <div class="bg-white p-8 rounded-lg shadow-xl">
+                            <h2 class="text-3xl font-bold mb-6">Send us a Message</h2>
+                            <form id="contact-form">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-deep-slate font-semibold mb-2">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-deep-slate font-semibold mb-2">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
+                                </div>
+                                 <div class="mb-4">
+                                    <label for="phone" class="block text-deep-slate font-semibold mb-2">Phone</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="block text-deep-slate font-semibold mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required></textarea>
+                                </div>
+                                <div class="mb-6">
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" name="whatsapp-followup" class="form-checkbox h-5 w-5 text-forest-green rounded focus:ring-forest-green">
+                                        <span class="ml-2 text-deep-slate">Request WhatsApp follow-up</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="w-full bg-forest-green text-white font-bold py-3 px-6 rounded-lg hover:bg-forest-green-dark transition-colors">
+                                    Submit
+                                </button>
+                                <p id="form-status" class="mt-4 text-center"></p>
+                            </form>
+                        </div>
+                        <!-- Contact Info & Map -->
+                        <div class="space-y-8">
+                             <div class="bg-white p-8 rounded-lg shadow-xl">
+                                <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                                <div class="space-y-4 text-lg">
+                                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-sky-blue" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg> <span>Cell: 065 585 0441 / 072 304 2560</span></p>
+                                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-sky-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.919 6.18l-1.059 3.874 3.996-1.042z"/></svg> <span>WhatsApp: 069 765 0022</span></p>
+                                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-sky-blue" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg> <span>Email: claddingnaturalstone@gmail.com</span></p>
+                                    <p class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-sky-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg> <span>Address: 30 Mooi River, South Africa</span></p>
+                                </div>
+                             </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Find Us Here</h3>
+                                <div class="rounded-lg shadow-xl overflow-hidden h-80">
+                                   <!-- GOOGLE MAPS: Go to Google Maps, find your location, click "Share", then "Embed a map". Copy the HTML and paste it here. -->
+                                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111551.4285742194!2d29.93299772025381!3d-29.21553531393616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef116a44b16259d%3A0x67a26c493952a758!2sMooi%20River!5e0!3m2!1sen!2sza!4v1678886450123!5m2!1sen!2sza" 
+                                   width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-deep-slate text-light-cream">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Logo and Info -->
+                <div class="md:col-span-1">
+                     <!-- FOOTER LOGO: Replace 'images/logo-white.svg' with a white version of your logo file. -->
+                    <img src="images/logo-white.svg" alt="Stone Cladding Logo" class="h-10 mb-2">
+                    <p class="text-granite-grey">Timeless design, structural integrity.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                     <ul class="space-y-2">
+                        <li><a href="#home" onclick="showPage('home')" class="hover:text-sky-blue transition-colors">Home</a></li>
+                        <li><a href="#services" onclick="showPage('services')" class="hover:text-sky-blue transition-colors">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('contact')" class="hover:text-sky-blue transition-colors">Contact</a></li>
+                     </ul>
+                </div>
+                <!-- Contact Info -->
+                 <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic space-y-2 text-granite-grey">
+                        <p>30 Mooi River, South Africa</p>
+                        <p>Cell: 065 585 04410</p>
+                        <p>WhatsApp: 069 765 0022</p>
+                        <p>Email: claddingnaturalstone@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+             <div class="mt-12 pt-8 border-t border-granite-grey text-center text-granite-grey text-sm">
+                <p>Copyright © 2025 Stone Cladding. All rights reserved.</p>
+                <p class="mt-2 max-w-4xl mx-auto">No part of this website, including but not limited to images, text, or design elements, may be copied, reproduced, stored, or transmitted in any form or by any means without express written permission. For inquiries, please contact claddingnaturalstone@gmail.com.</p>
+             </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Navigation ---
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function showPage(pageId, clickedLink) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show the target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active state on nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu after click
+            mobileMenu.classList.add('hidden');
+            
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+        }
+        
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set initial page based on URL hash or default to home
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                const targetLink = document.querySelector(`.nav-link[href='#${hash}']`);
+                if(targetLink) showPage(hash, targetLink);
+                else showPage('home', document.querySelector('.nav-link[href=\'#home\']'));
+            } else {
+                showPage('home', document.querySelector('.nav-link[href=\'#home\']'));
+            }
+        });
+
+
+        // --- Testimonial Slider ---
+        const swiper = new Swiper('.testimonial-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        
+        // --- Contact Form ---
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = '#8B8C89';
+
+            // Simulate form submission
+            setTimeout(() => {
+                formStatus.textContent = 'Thank you! Your message has been sent.';
+                formStatus.style.color = '#4A5D23';
+                contactForm.reset();
+            }, 1500);
+        });
+
+    </script>
+
+</body>
+</html>
